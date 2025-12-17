@@ -19,10 +19,11 @@ class ContactController extends Controller
             'last_name',
             'gender',
             'email',
-            'tel',
             'address',
             'building',
+            'category_id',
             'detail',]);
+        $contact['tel'] = $request->tel1 . '-' . $request->tel2 . '-' . $request->tel3;
         return view('confirm', compact('contact'));
     }
 
@@ -33,10 +34,11 @@ class ContactController extends Controller
             'last_name',
             'gender',
             'email',
-            'tel',
             'address',
             'building',
+            'category_id',
             'detail',]);
+        $contact['tel'] = $request->tel1 . '-' . $request->tel2 . '-' . $request->tel3;
         Contact::create($contact);
         return view('thanks');
     }

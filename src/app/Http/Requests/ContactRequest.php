@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Symfony\Component\Mime\Encoder\ContentEncoderInterface;
 
 class ContactRequest extends FormRequest
 {
@@ -28,10 +29,12 @@ class ContactRequest extends FormRequest
             'last_name' => ['required', 'string', 'max:8'],
             'gender' => ['required'],
             'email' => ['required', 'email'],
-            'tel'  => ['required', 'digits_between:1,5'],
+            'tel1'  => ['required', 'digits_between:1,5'],
             'address' => ['required'],
             'building' => ['nullable'],
             'detail' => ['required'],
+            'category_id' => ['required'],
+            'detail' => ['required', 'string', 'max:120'],
         ];
     }
 
@@ -46,6 +49,9 @@ class ContactRequest extends FormRequest
             'tel.required' => '電話番号を入力してください',
             'tel.numeric' => '電話番号は半角英数字で入力してください',
             'tel.digits_between' => '電話番号は5桁まで数字で入力してください',
+            'category_id.required' => 'お問合せの種類を選択してください',
+            'detail.required' => 'お問合せ内容を入力してください',
+            'detail.max' => 'お問合せ内容は120文字以内にしてください',
         ];
     }
 }
