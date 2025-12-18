@@ -11,8 +11,8 @@
 </head>
 
 <body>
-    <header>
-        <h1>FashionablyLate</h1>
+    <header class="header">
+        <h1 class="logo">FashionablyLate</h1>
     </header>
 
     <main>
@@ -123,11 +123,12 @@
                         <span class="form__label--required">※</span>
                         <select name="category_id">
                             <option value="">選択してください</option>
-                            <option value="1" {{ old('category_id') == 1 ? 'selected' : '' }}>商品のお届けについて</option>
-                            <option value="2" {{ old('category_id') == 2 ? 'selected' : '' }}>商品の交換について</option>
-                            <option value="3" {{ old('category_id') == 3 ? 'selected' : '' }}>商品トラブル</option>
-                            <option value="4" {{ old('category_id') == 4 ? 'selected' : '' }}>ショップへのお問合わせ</option>
-                            <option value="5" {{ old('category_id') == 5 ? 'selected' : '' }}>その他</option>
+                            @foreach ($categories as $category)
+                            <option value="{{ $category->id }}"
+                                {{ old('category_id') == $category->id ? 'selected' : '' }}>
+                                {{ $category->content }}
+                            </option>
+                            @endforeach
                         </select>
 
                     </div>

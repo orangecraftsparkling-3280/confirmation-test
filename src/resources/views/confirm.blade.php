@@ -5,51 +5,82 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact Form</title>
+    <title>FashionablyLate</title>
     <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}" />
-    <link rel="stylesheet" href="{{ asset('css/confirm.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/index.css') }}" />
 </head>
 
 <body>
     <header class="header">
-        <div class="header__inner">
-            <a class="header__logo" href="/">
-                Contact Form
-            </a>
-        </div>
+        <h1 class="logo">FashionablyLate</h1>
     </header>
 
-    <main>
-        <div class="confirm__content">
-            <div class="confirm__heading">
-                <h2>お問い合わせ内容確認</h2>
+    <main class="container">
+        <div class="contact-form__content">
+            <div class="heading">
+                <h2>confirm</h2>
             </div>
-            <form class="form" action="/contacts" method="post">
+
+
+            <form class="form" action="{{ route('contact.store') }}" method="POST">
                 @csrf
                 <div class="confirm-table">
                     <table class="confirm-table__inner">
                         <tr class="confirm-table__row">
                             <th class="confirm-table__header">お名前</th>
                             <td class="confirm-table__text">
-                                <input type="text" name="name" value="{{ $contact['first_name'] }} {{ $contact['last_name'] }}" readonly />
+                                {{ $contact['first_name'] }} {{ $contact['last_name'] }}
+                                <input type="hidden" name="first_name" value="{{ $contact['first_name'] }}" />
+                                <input type="hidden" name="last_name" value="{{ $contact['last_name'] }}" />
+                            </td>
+                        </tr>
+                        <tr class="confirm-table__row">
+                            <th class="confirm-table__header">性別</th>
+                            <td class="confirm-table__text">
+                                {{ $contact['gender_label'] }}
+                                <input type="hidden" name="gender" value="{{ $contact['gender'] }}" />
                             </td>
                         </tr>
                         <tr class="confirm-table__row">
                             <th class="confirm-table__header">メールアドレス</th>
                             <td class="confirm-table__text">
-                                <input type="text" name="name" value="{{ $contact['email'] }}" readonly />
+                                {{ $contact['email'] }}
+                                <input type="hidden" name="email" value="{{ $contact['email'] }}" />
                             </td>
                         </tr>
                         <tr class="confirm-table__row">
                             <th class="confirm-table__header">電話番号</th>
                             <td class="confirm-table__text">
-                                <input type="text" name="name" value="{{ $contact['tel'] }}" readonly />
+                                {{ $contact['tel'] }}
+                                <input type="hidden" name="tel" value="{{ $contact['tel'] }}" />
+                            </td>
+                        </tr>
+                        <tr class="confirm-table__row">
+                            <th class="confirm-table__header">住所</th>
+                            <td class="confirm-table__text">
+                                {{ $contact['address'] }}
+                                <input type="hidden" name="address" value="{{ $contact['address'] }}" />
+                            </td>
+                        </tr>
+                        <tr class="confirm-table__row">
+                            <th class="confirm-table__header">建物名</th>
+                            <td class="confirm-table__text">
+                                {{ $contact['building'] }}
+                                <input type="hidden" name="building" value="{{ $contact['building'] }}" />
+                            </td>
+                        </tr>
+                        <tr class="confirm-table__row">
+                            <th class="confirm-table__header">お問い合わせの種類</th>
+                            <td class="confirm-table__text">
+                                {{ $contact['category_label'] }}
+                                <input type="hidden" name="category_id" value="{{ $contact['category_id'] }}" />
                             </td>
                         </tr>
                         <tr class="confirm-table__row">
                             <th class="confirm-table__header">お問い合わせ内容</th>
                             <td class="confirm-table__text">
-                                <input type="text" name="name" value="{{ $contact['detail'] }}" readonly />
+                                {{ $contact['detail'] }}
+                                <input type="hidden" name="detail" value="{{ $contact['detail'] }}" />
                             </td>
                         </tr>
                     </table>

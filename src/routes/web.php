@@ -13,6 +13,12 @@ use App\Http\Controllers\ContactController;
 |
 */
 
-Route::get('/', [ContactController::class, 'index']);
-Route::post('/contacts/confirm', [ContactController::class, 'confirm']);
+Route::get('/', [ContactController::class, 'index'])->name('contact.index');
+Route::post('/contacts/confirm', [ContactController::class, 'confirm'])->name('contact.confirm');
+Route::get('/contacts/confirm', function () {
+    return redirect()->route('contact.index');
+});
 Route::post('/contacts', [ContactController::class, 'store']);
+Route::post('/store', [ContactController::class, 'store'])->name('contact.store');
+Route::get('/thanks', function () {
+    return view('thanks');})->name('thanks');
