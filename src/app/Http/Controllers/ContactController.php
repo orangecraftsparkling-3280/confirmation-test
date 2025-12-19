@@ -27,7 +27,7 @@ class ContactController extends Controller
             'category_id',
             'detail',
         ]);
-        $contact['tel'] = $request->tel1 . '-' . $request->tel2 . '-' . $request->tel3;
+        $contact['tel'] = $request->tel1 . $request->tel2 . $request->tel3;
         $genderMap = [1 => '男性', 2 => '女性', 3 => 'その他'];
         $contact['gender_label'] = $genderMap[$contact['gender']] ?? '';
         $contact['category_label'] =

@@ -1,27 +1,45 @@
-.header {
-    background: #000;
-}
-
-.header__inner {
-    margin: 0 auto;
-    padding: 20px 15px;
-    max-width: 1230px;
-}
-
-.header__logo {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 24px;
+body {
+    margin: 0;
+    background-color: #fff;
 }
 
 .thanks__content {
-    margin: 0 auto;
-    padding: 30px 15px;
-    max-width: 1230px;
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.thanks__content::before {
+    content: "Thank you";
+    position: absolute;
+    font-size: 180px;
+    color: rgba(0, 0, 0, 0.05);
+    letter-spacing: 8px;
+    white-space: nowrap;
+    z-index: 0;
 }
 
 .thanks__heading {
-    margin-bottom: 40px;
-    text-align: center;
+    font-size: 18px;
+    color: #8b7d6b;
+    margin-bottom: 30px;
+    z-index: 1;
+}
+
+.form__button {
+    text-decoration: none;
+    background-color: #8b7d6b;
+    color: #fff;
+    padding: 10px 40px;
+    font-size: 14px;
+    letter-spacing: 2px;
+    position: relative;
+    z-index: 1;
+}
+
+.form__button:hover {
+    opacity: 0.7;
 }
