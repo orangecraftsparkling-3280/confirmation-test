@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\Admin\AdminController;
+use Laravel\Fortify\Http\Controllers\AuthenticatedSessionController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,16 +15,16 @@ use App\Http\Controllers\Admin\AdminController;
 |
 */
 
+// お問い合わせ（未ログインOK）
 Route::get('/', [ContactController::class, 'index'])->name('contact.index');
 Route::post('/contacts/confirm', [ContactController::class, 'confirm'])->name('contact.confirm');
-Route::get('/contacts/confirm', function () {
-    return redirect()->route('contact.index');
-});
-Route::post('/contacts', [ContactController::class, 'store']);
-Route::post('/store', [ContactController::class, 'store'])->name('contact.store');
-Route::get('/thanks', function () {
-    return view('thanks');})->name('thanks');
-Route::prefix('admin')->group(function () {
-    Route::get('/contacts', [AdminController::class, 'index']);
+Route::post('/contacts', [ContactController::class, 'store'])->name('contact.store');
+Route::get('/thanks', fn() => view('thanks'))->name('thanks');
+
+// 管理画面（ログイン必須）
+Route::middleware('auth')->prefix('admin')->group(function () {
+    Route::get('/', [AdminController::class, 'index'])->name('admin.index');
     Route::delete('/contacts/{id}', [AdminController::class, 'destroy']);
+    Route::get('/export', [AdminController::class, 'export'])->name('admin.export');
 });
+Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');

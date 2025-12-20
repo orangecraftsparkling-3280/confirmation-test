@@ -11,9 +11,9 @@
 
     <header class="admin-header">
         <h1 class="logo">FashionablyLate</h1>
-        <form action="/logout" method="POST">
+        <form class="form" action="{{ route('logout') }}" method="post">
             @csrf
-            <button class="logout">logout</button>
+            <button type="submit">logout</button>
         </form>
     </header>
 
@@ -21,7 +21,7 @@
 
         <h2 class="admin-title">Admin</h2>
 
-        <form class="search-form" method="GET" action="/admin/contacts">
+        <form class="search-form" method="GET" action="/admin">
             <input type="text" name="keyword" placeholder="名前やメールアドレスを入力してください">
 
             <select name="gender">
@@ -43,11 +43,11 @@
             <input type="date" name="date">
 
             <button class="btn-search">検索</button>
-            <a href="/admin/contacts" class="btn-reset">リセット</a>
+            <a href="/admin" class="btn-reset">リセット</a>
         </form>
 
         <div class="sub-bar">
-            <button class="btn-export">エクスポート</button>
+            <a href="{{ route('admin.export', request()->query()) }}" class="btn-export">エクスポート</a>
             {{ $contacts->links() }}
         </div>
 
