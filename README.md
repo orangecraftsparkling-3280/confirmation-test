@@ -7,7 +7,7 @@
 git clone https://github.com/orangecraftsparkling-3280/confirmation-test.git
 cd confirmation-test
 docker compose up -d --build
-cp .env.example .env
+cp src/.env.example src/.env
 docker compose exec php composer install
 docker compose exec php php artisan key:generate
 docker compose exec php php artisan migrate --seed
