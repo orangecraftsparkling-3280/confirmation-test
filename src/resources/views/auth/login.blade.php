@@ -1,15 +1,48 @@
-<form class="form" action="/login" method="post">
-    @csrf
-    <input type="email" name="email" placeholder="メールアドレス" value="{{ old('email') }}">
-    @error('email')<div style="color:red">{{ $message }}</div>@enderror
+<!DOCTYPE html>
+<html lang="ja">
 
-    <input type="password" name="password" placeholder="パスワード">
-    @error('password')<div style="color:red">{{ $message }}</div>@enderror
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FashionablyLate</title>
+    <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/login.css') }}">
+</head>
 
-    @if(session('login_error'))
-    <div style="color:red">{{ session('login_error') }}</div>
-    @endif
+<body>
+    <header class="admin-header">
+        <h1 class="logo">FashionablyLate</h1>
+        <div class="login-btn">
+            <a href="{{ route('register') }}">
+                <button type="button">Register</button>
+            </a>
+        </div>
+    </header>
 
-    <button type="submit">ログイン</button>
-</form>
-<a href="{{ route('register') }}">新規登録</a>
+    <h2>Login</h2>
+    <form class="form" action="{{ route('login') }}" method="post" novalidate>
+        @csrf
+
+
+        <label for="email">メールアドレス</label>
+        <input type="email" id="email" name="email" placeholder="例:test@example.com" value="{{ old('email') }}">
+        @error('email')
+        <div class="error">{{ $message }}</div>
+        @enderror
+
+        <label for="password">パスワード</label>
+        <input type="password" id="password" name="password" placeholder="例:password">
+        @error('password')
+        <div class="error">{{ $message }}</div>
+        @enderror
+
+        @if(session('login_error'))
+        <div class="error">{{ session('login_error') }}</div>
+        @endif
+
+        <button type="submit">ログイン</button>
+
+    </form>
+</body>
+
+</html>

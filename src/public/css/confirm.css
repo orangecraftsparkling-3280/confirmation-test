@@ -1,94 +1,94 @@
-/* 全体 */
+/* --- 全体 --- */
 body {
-    font-family: "Yu Gothic", sans-serif;
-    background-color: #f5f5f5;
-    color: #333;
-    margin: 0;
+    font-family: "Noto Serif JP", serif;
+    color: #8a7b6a;
+    background: #fff;
+    font-size: 16px;
 }
 
-/* ヘッダー */
-.header {
+header {
     text-align: center;
-    padding: 30px 0 10px 0;
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
 }
 
-.logo {
-    font-size: 28px;
-    color: #a29383;
+h1 {
+    font-size: 32px;
     margin: 0;
 }
 
-/* メインコンテンツ */
+/* --- メインコンテンツ --- */
 .container {
+    width: 100%;
     max-width: 800px;
-    margin: 30px auto;
-    padding: 20px 30px;
     background-color: #fff;
-    border-radius: 8px;
+    padding: 40px;
+    margin:0 auto;
 }
 
-/* タイトル */
 .heading h2 {
     text-align: center;
-    color: #a29383;
-    font-size: 22px;
+    font-size: 20px;
     margin-bottom: 30px;
+    color: #8a7b6a;
+    text-transform: capitalize;
 }
 
-/* 確認テーブル */
-.confirm-table {
+/* --- 確認テーブル --- */
+.confirm-table__inner {
     width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 30px;
 }
 
-.confirm-table th,
-.confirm-table td {
-    border: 1px solid #e5e5e5;
-    padding: 15px;
+.confirm-table__row {
+    border: 1px solid #e0e0e0;
+    height: auto;
+}
+
+.confirm-table__header {
+    width: 250px;
+    background-color: #b4a896;
+    color: #fff;
+    text-align: left;
+    padding: 10px 10px;
     vertical-align: top;
 }
 
-.confirm-table th {
-    width: 30%;
-    background-color: #b8ab9f;
-    color: #fff;
-    font-weight: normal;
+.confirm-table__text {
+    width: 600px;
+    padding: 10px;
+    color: #4b3f34;
 }
 
-.confirm-table td {
-    background-color: #fff;
-}
-
-.confirm-table .detail {
-    white-space: pre-wrap; /* 改行を保持 */
-}
-
-/* ボタンエリア */
-.buttons {
-    text-align: center;
+/* --- ボタン --- */
+.form__button {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    align-items: center;
+    margin-top: 30px;
 }
 
-.btn {
-    padding: 10px 30px;
-    font-size: 16px;
-    border-radius: 4px;
-    border: none;
-    cursor: pointer;
-}
-
-/* 送信ボタン */
-.btn.submit {
-    background-color: #a29383;
+.form__button-submit {
+    background-color: #b4a896;
     color: #fff;
+    border: none;
+    padding: 10px 24px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-right: 15px;
+    transition: background-color 0.3s;
 }
 
-/* 修正ボタン */
-.btn.back {
-    background-color: transparent;
-    color: #333;
+.form__button-submit:hover {
+    background-color: #9e8d7b;
+}
+
+.form__button-modify {
+    color: #b4a896;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.form__button-modify:hover {
     text-decoration: underline;
 }

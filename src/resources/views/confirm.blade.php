@@ -7,21 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FashionablyLate</title>
     <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}" />
-    <link rel="stylesheet" href="{{ asset('css/index.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/confirm.css') }}" />
 </head>
 
 <body>
     <header class="header">
         <h1 class="logo">FashionablyLate</h1>
     </header>
+        <div class="heading">
+            <h2>confirm</h2>
+        </div>
 
     <main class="container">
-        <div class="contact-form__content">
-            <div class="heading">
-                <h2>confirm</h2>
-            </div>
-
-
             <form class="form" action="{{ route('contact.store') }}" method="POST">
                 @csrf
                 <div class="confirm-table">
@@ -87,9 +84,9 @@
                 </div>
                 <div class="form__button">
                     <button class="form__button-submit" type="submit">送信</button>
+                    <a href="{{ route('contact.index') }}" class="form__button-modify">修正</a>
                 </div>
             </form>
-        </div>
     </main>
 </body>
 
