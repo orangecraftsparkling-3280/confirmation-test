@@ -1,29 +1,28 @@
-＃アプリケーション名
+## アプリケーション名
 　
 ユーザーと管理者向けのお問い合わせフォームアプリケーション
 
-##環境構築
+## 環境構築
 ```bash
 git clone https://github.com/orangecraftsparkling-3280/confirmation-test.git
 cd confirmation-test
 docker compose up -d --build
-docker compose exec php bash
-composer install
-cp .env.example .src/env
-exit
+cp .env.example .env
+docker compose exec php composer install
 docker compose exec php php artisan key:generate
-docker compose exec php php artisan migrate
-docker compose exec php php artisan db:seed
+docker compose exec php php artisan migrate --seed
 
-##.envファイル設定
-DB_CONNECTION: mysql
-DB_HOST: mysql （Docker サービス名に一致）
-DB_PORT: 3306
-DB_DATABASE: laravel_db
-DB_USERNAME: laravel_user
-DB_PASSWORD: laravel_pass
 ```
-##実行環境
+## .envファイル設定
+```env
+DB_CONNECTION=mysql
+DB_HOST=mysql
+DB_PORT=3306
+DB_DATABASE=laravel_db
+DB_USERNAME=laravel_user
+DB_PASSWORD=laravel_pass
+```
+## 実行環境
 ### Docker環境
 - Docker 20.x 以上
 - Docker Compose 1.29.x 以上
@@ -40,7 +39,7 @@ DB_PASSWORD: laravel_pass
 ### 推奨ブラウザ
 - Chrome / Firefox / Edge（最新バージョン）
 
-##ブラウザでアクセス
+## ブラウザでアクセス
 
 アプリケーション: http://localhost
 
@@ -48,5 +47,10 @@ phpMyAdmin: http://localhost:8080
 
 管理画面　http://localhost/admin
 
-ER図
-![alt text](確認テスト用ER図.jpg)
+## 管理画面ログイン情報（初期値）
+
+メールアドレス: admin@example.com
+パスワード: password
+
+## ER図
+![ER図](確認テスト用ER図.jpg)
