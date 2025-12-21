@@ -1,8 +1,8 @@
-<!-- ＃アプリケーション名 -->
+＃アプリケーション名
 　
 ユーザーと管理者向けのお問い合わせフォームアプリケーション
 
-<!-- ＃＃環境構築 -->
+##環境構築
 git clone https://github.com/orangecraftsparkling-3280/confirmation-test.git
 cd confirmation-test
 docker compose up -d --build
@@ -14,7 +14,7 @@ docker compose exec php php artisan key:generate
 docker compose exec php php artisan migrate
 docker compose exec php php artisan db:seed
 
-<!-- .envファイル設定 -->
+##.envファイル設定
 DB_CONNECTION: mysql
 DB_HOST: mysql （Docker サービス名に一致）
 DB_PORT: 3306
@@ -22,7 +22,7 @@ DB_DATABASE: laravel_db
 DB_USERNAME: laravel_user
 DB_PASSWORD: laravel_pass
 
-<!-- ＃実行環境 -->
+##実行環境
 ### Docker環境
 - Docker 20.x 以上
 - Docker Compose 1.29.x 以上
@@ -39,7 +39,7 @@ DB_PASSWORD: laravel_pass
 ### 推奨ブラウザ
 - Chrome / Firefox / Edge（最新バージョン）
 
-<!-- ブラウザでアクセス -->
+##ブラウザでアクセス
 
 アプリケーション: http://localhost
 
