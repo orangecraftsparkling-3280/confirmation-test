@@ -10,7 +10,6 @@ docker compose up -d --build
 cp src/.env.example src/.env
 docker compose exec php composer install
 docker compose exec php php artisan key:generate
-docker compose exec php php artisan migrate --seed
 
 ```
 ## .envファイル設定
@@ -21,6 +20,9 @@ DB_PORT=3306
 DB_DATABASE=laravel_db
 DB_USERNAME=laravel_user
 DB_PASSWORD=laravel_pass
+```
+```
+docker compose exec php php artisan migrate --seed
 ```
 ## 実行環境
 ### Docker環境
