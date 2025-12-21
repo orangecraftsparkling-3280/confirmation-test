@@ -3,6 +3,7 @@
 ユーザーと管理者向けのお問い合わせフォームアプリケーション
 
 ##環境構築
+```bash
 git clone https://github.com/orangecraftsparkling-3280/confirmation-test.git
 cd confirmation-test
 docker compose up -d --build
@@ -21,7 +22,7 @@ DB_PORT: 3306
 DB_DATABASE: laravel_db
 DB_USERNAME: laravel_user
 DB_PASSWORD: laravel_pass
-
+```
 ##実行環境
 ### Docker環境
 - Docker 20.x 以上
