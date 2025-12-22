@@ -4,25 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admin</title>
+    <title>FashionablyLate</title>
     <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
 </head>
 
 <body>
-
-    <header class="admin-header">
+    <header class="header">
         <h1 class="logo">FashionablyLate</h1>
+    </header>
+
         <form class="form" action="{{ route('logout') }}" method="post">
             @csrf
             <button type="submit">logout</button>
         </form>
-    </header>
 
     <main class="admin-main">
-
         <h2 class="admin-title">Admin</h2>
-
         <form class="search-form" method="GET" action="/admin">
             <input type="text" name="keyword" placeholder="名前やメールアドレスを入力してください">
 

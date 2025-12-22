@@ -14,10 +14,10 @@
     <header class="header">
         <h1 class="logo">FashionablyLate</h1>
     </header>
+
         <div class="heading">
             <h2>confirm</h2>
         </div>
-
     <main class="container">
             <form class="form" action="{{ route('contact.store') }}" method="POST">
                 @csrf
