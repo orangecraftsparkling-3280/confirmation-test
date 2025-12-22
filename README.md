@@ -21,6 +21,7 @@ DB_DATABASE=laravel_db
 DB_USERNAME=laravel_user
 DB_PASSWORD=laravel_pass
 ```
+### .envファイル設定後実行
 ```
 docker compose exec php php artisan migrate --seed
 ```
@@ -49,10 +50,6 @@ phpMyAdmin: http://localhost:8080
 
 管理画面: http://localhost/admin
 
-## 管理画面ログイン情報（初期値）
-
-メールアドレス: admin@example.com
-パスワード: password
 
 ## ER図
 ![ER図](確認テスト用ER図.jpg)

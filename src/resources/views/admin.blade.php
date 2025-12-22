@@ -12,12 +12,12 @@
 <body>
     <header class="header">
         <h1 class="logo">FashionablyLate</h1>
-    </header>
-
         <form class="form" action="{{ route('logout') }}" method="post">
             @csrf
             <button type="submit">logout</button>
         </form>
+    </header>
+
 
     <main class="admin-main">
         <h2 class="admin-title">Admin</h2>

@@ -6,33 +6,47 @@ body {
 }
 
 .header {
+    width: 100%;
+    max-width: 900px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 20px 40px;
+    justify-content: center;
+    position: relative;
+    padding: 40px;
     border-bottom: 1px solid #eee;
+    box-sizing: border-box;
 }
 
-.logo {
-    font-size: 28px;
-    letter-spacing: 2px;
+
+.header .logo {
+    font-size: 24px;
+    font-weight: bold;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-.admin-header form button {
-    border: 1px solid #e0d6cc;
-    background-color: #fff;
-    color: #8a7b6a;
+.header .form {
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.header .form button {
     padding: 6px 16px;
     font-size: 14px;
+    font-weight: 500;
+    color: #8a7b6a;
+    background-color: #f9f6f2;
+    border: 1px solid #e0dcd6;
     cursor: pointer;
-    transition: all 0.2s ease;
 }
 
-.admin-header form button:hover {
+.header .form button:hover {
     background-color: #f5f5f5;
     border-color: #d1c2b3;
 }
-
 .admin-main {
     width: 90%;
     margin: 40px auto;
