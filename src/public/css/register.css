@@ -10,14 +10,13 @@ body {
     color: #8a7b6a;
 }
 
-/* ヘッダー */
 .admin-header {
-    position: relative; /* ボタン絶対配置の基準 */
+    position: relative;
     width: 100%;
     height: 80px;
     display: flex;
-    justify-content: center; /* ロゴ中央固定 */
-    align-items: center; /* 縦中央揃え */
+    justify-content: center;
+    align-items: center;
     background: #fff;
     border-bottom: 1px solid #eee;
     padding: 0 40px;
@@ -46,7 +45,6 @@ body {
     cursor: pointer;
 }
 
-/* フォーム */
 form.form {
     width: 500px;
     padding: 40px 80px;
@@ -65,7 +63,6 @@ form.form label {
     color: #8a7b6a;
 }
 
-/* 入力欄 */
 form.form input {
     width: 100%;
     height: 40px;
@@ -79,14 +76,12 @@ form.form input {
     box-sizing: border-box;
 }
 
-/* 入力欄フォーカス */
 form.form input:focus {
     outline: none;
     border-color: #b8ab9f;
     background-color: #ffffff;
 }
 
-/* エラーメッセージ */
 form.form .error {
     color: #d9534f;
     font-size: 12px;
@@ -95,7 +90,6 @@ form.form .error {
     text-align: left;
 }
 
-/* 登録ボタン */
 form.form button {
     width: 100px;
     height: 42px;
@@ -110,7 +104,6 @@ form.form button:hover {
     background-color: #7a6b5a;
 }
 
-/* ブラウザの赤点対策 */
 form.form input:invalid {
     outline: none !important;
     box-shadow: none !important;

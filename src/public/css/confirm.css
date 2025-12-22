@@ -1,4 +1,3 @@
-/* --- 全体 --- */
 body {
     font-family: "Noto Serif JP", serif;
     color: #8a7b6a;
@@ -17,7 +16,6 @@ h1 {
     margin: 0;
 }
 
-/* --- メインコンテンツ --- */
 .container {
     width: 100%;
     max-width: 800px;
@@ -34,7 +32,6 @@ h1 {
     text-transform: capitalize;
 }
 
-/* --- 確認テーブル --- */
 .confirm-table__inner {
     width: 100%;
 }
@@ -59,7 +56,6 @@ h1 {
     color: #4b3f34;
 }
 
-/* --- ボタン --- */
 .form__button {
     display: flex;
     justify-content: center;
@@ -73,7 +69,6 @@ h1 {
     border: none;
     padding: 10px 24px;
     cursor: pointer;
-    border-radius: 4px;
     font-size: 16px;
     margin-right: 15px;
     transition: background-color 0.3s;
