@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <header class="admin-header">
+    <header class="header">
         <h1 class="logo">FashionablyLate</h1>
         <div class="login-btn">
             <a href="{{ route('register') }}">
