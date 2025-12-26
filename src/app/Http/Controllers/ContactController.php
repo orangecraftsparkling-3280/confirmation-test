@@ -9,7 +9,7 @@ use App\Models\Category;
 
 class ContactController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $categories = Category::all();
         return view('index', compact('categories'));
@@ -32,7 +32,14 @@ class ContactController extends Controller
         $contact['gender_label'] = $genderMap[$contact['gender']] ?? '';
         $contact['category_label'] =
             Category::find($contact['category_id'])->content ?? '';
-        return view('confirm', compact('contact'));
+        $inputs = $request->except('_token');
+        return view('confirm', compact('contact', 'inputs'));
+    }
+
+    public function create(Request $request)
+    {
+        $categories = Category::all();
+        return view('index', compact('categories'));
     }
 
     public function store(Request $request)
@@ -50,4 +57,12 @@ class ContactController extends Controller
         ]);
         return redirect()->route('thanks');
     }
+
+    public function edit(Request $request)
+    {
+        return redirect()
+            ->route('contact.index')
+            ->withInput($request->all());
+    }
+
 }

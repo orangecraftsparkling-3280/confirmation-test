@@ -115,7 +115,7 @@ class AdminController extends Controller
         return response()->stream($callback, 200, $headers);
     }
 
-    public function login(LoginRequest $request)
+    public function login(loginRequest $request)
     {
         $credentials = $request->only('email', 'password');
 

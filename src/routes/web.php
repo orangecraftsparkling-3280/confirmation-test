@@ -17,6 +17,8 @@ use Laravel\Fortify\Http\Controllers\AuthenticatedSessionController;
 
 // お問い合わせ（未ログインOK）
 Route::get('/', [ContactController::class, 'index'])->name('contact.index');
+Route::post('/contact/edit', [ContactController::class, 'edit'])
+    ->name('contact.edit');
 Route::post('/contacts/confirm', [ContactController::class, 'confirm'])->name('contact.confirm');
 Route::post('/contacts', [ContactController::class, 'store'])->name('contact.store');
 Route::get('/thanks', fn() => view('thanks'))->name('thanks');

@@ -149,7 +149,7 @@
                         <span class="form__label--required">※</span>
                     </div>
                     <div class="form__group-content">
-                        <textarea name="detail" placeholder="お問い合わせ内容をご確認ください">{{ old('detail') }}</textarea>
+                        <textarea name="detail" placeholder="お問い合わせ内容をご確認ください" >{{ old('detail') }}</textarea>
                         <div class="form__error">
                             @error('detail') {{ $message }} @enderror
                         </div>
